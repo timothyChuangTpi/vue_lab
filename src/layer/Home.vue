@@ -34,9 +34,10 @@
               <div class="dashboard-fake-img"></div>
             </div>
             <div class="actions">
-              <label v-for="label in secondLabelList" :key="label" class="label">{{label}}</label>> 231 | 收藏 34 | 評論 34 | 觀看 786</div>
+              <label v-for="label in secondLabelList" :key="label" class="label">{{label}}</label> 231 | 收藏 34 | 評論 34 | 觀看 786</div>
         </div>
     </div>
+    <button @click="onBtnChangeLabelData">修改標籤</button>
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
@@ -45,6 +46,10 @@ const name = ref("張傑攻");
 const dateTime = dayjs(new Date()).format('YYYY.MM.DD');
 const labelList = ref(['故事', '甄選優質', '點讚']);
 const secondLabelList = ref(['散文', '點讚']);
+
+const onBtnChangeLabelData = () => {
+  secondLabelList.value = ['散文', '點讚', '甄選優質'];
+}
 
 </script>
 
